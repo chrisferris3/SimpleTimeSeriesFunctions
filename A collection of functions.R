@@ -14,3 +14,15 @@ perc <- function(x, n){ 100*length((which(x != n))) / length(x) }
 coef.variation <- function(x) {
   sqrt(var(x))/mean(x)
 }
+
+##############################################
+# ------------------------------------------ #
+# Constant Annual Growth Rate (CAGR)Function #
+# Takes two time series and the difference   # 
+# in years as inputs and spits out the rate  #
+# converted to a rounded percentage value    #
+# ------------------------------------------ #
+
+CAGR <- function(yt,ytn,n){
+  r <-((yt/ytn)^(1/n)-1)*100
+  round(r, digits = 2)
